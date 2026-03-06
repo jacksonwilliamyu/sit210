@@ -1,0 +1,2 @@
+In task 1.1P we simulated a smart lighting project for Linda. When Linda pushes the button, we made it so that both porch and hallway light would turn on.
+The system was created using Arduino nano, two LEDs, two transistors and a pushbutton. When the push buttton is pressed, both lights would turn on. The porch light will stay on for 30 seconds, whilst the hallway will stay on for a further 30 seconds.
