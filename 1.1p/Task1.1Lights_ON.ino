@@ -1,25 +1,37 @@
-int pushButton = 2;
-int porchLED = 5;
-int hallwayLED = 6;
+int button = 2;
+int porchLed = 5; // Red Led
+int hallwayLed = 6; // Green Led
 
 void setup() {
-  pinMode(pushButton, INPUT_PULLUP);
-  pinMode(porchLED, OUTPUT);
-  pinMode(hallwayLED, OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  pinMode(porchLed, OUTPUT);
+  pinMode(hallwayLed, OUTPUT);
 }
 
 void loop() {
-
-  if (digitalRead(pushButton) == LOW) {
-
-    digitalWrite(porchLED, HIGH);
-    digitalWrite(hallwayLED, HIGH);
-
-    delay(30000);          // porch light stays on 30 seconds
-    digitalWrite(porchLED, LOW);
-
-    delay(30000);          // hallway light stays on total 60 so just extra 60 seconds
-    digitalWrite(hallwayLED, LOW);
+  if (buttonPressed()) 
+  {
+    lightsOn();
+    lightTimeController();
   }
+}
 
+bool buttonPressed() 
+{
+  return digitalRead(button) == LOW;
+}
+
+void lightsOn() 
+{
+  digitalWrite(porchLed, HIGH);
+  digitalWrite(hallwayLed, HIGH);
+}
+
+void lightTimeController() 
+{
+  delay(3000);
+  digitalWrite(porchLed, LOW); // keep led on for 30 seconds
+
+  delay(3000);
+  digitalWrite(hallwayLed, LOW); // keep led on for an additional 30 seconds (60 total)
 }
