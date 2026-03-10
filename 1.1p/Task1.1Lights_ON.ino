@@ -2,13 +2,15 @@ int button = 2;
 int porchLed = 5; // Red Led
 int hallwayLed = 6; // Green Led
 
-void setup() {
+void setup() 
+{
   pinMode(button, INPUT_PULLUP);
   pinMode(porchLed, OUTPUT);
   pinMode(hallwayLed, OUTPUT);
 }
 
-void loop() {
+void loop() 
+{
   if (buttonPressed()) 
   {
     lightsOn();
