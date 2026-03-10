@@ -31,9 +31,9 @@ void lightsOn()
 
 void lightTimeController() 
 {
-  delay(3000);
+  delay(30000);
   digitalWrite(porchLed, LOW); // keep led on for 30 seconds
 
-  delay(3000);
+  delay(30000);
   digitalWrite(hallwayLed, LOW); // keep led on for an additional 30 seconds (60 total)
 }
